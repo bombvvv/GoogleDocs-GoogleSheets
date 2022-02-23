@@ -50,7 +50,7 @@
             <div class="level-left">
               <div class="level-item">
                 <span class="icon">
-                  <a href="https://github.com/Edoardo11/GoogleDocs-GoogleSheets">
+                  <a href="https://github.com/Edoardo11/GoogleDocs-GoogleSheets" target="_blank">
                     <i class="fab fa-github"></i>
                   </a>
                 </span> &emsp;
@@ -72,6 +72,27 @@
       --background: rgb(247, 247, 247);
       --textDark: hsla(0, 0%, 0%, 0.66);
       --textLight: hsla(0, 0%, 0%, 0.33);
+    }
+
+    a:link {
+      color: black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:visited {
+      color: black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #2ed6af;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    a:active {
+      color: #2ed6af;
+      background-color: transparent;
+      text-decoration: underline;
     }
 
     body {
