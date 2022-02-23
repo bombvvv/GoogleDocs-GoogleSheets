@@ -50,7 +50,9 @@
             <div class="level-left">
               <div class="level-item">
                 <span class="icon">
-                  <a href="https://github.com/Edoardo11/GoogleDocs-GoogleSheets" class="fab fa-github"></a>
+                  <a href="https://github.com/Edoardo11/GoogleDocs-GoogleSheets">
+                    <i class="fab fa-github">yu</i>
+                  </a>
                 </span> &emsp;
               </div>
             </div>
