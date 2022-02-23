@@ -18,7 +18,7 @@
         <div class="column is-8 is-offset-2 register">
           <div class="columns">
             <div class="column left">
-              <h1 class="title is-1">Super Cool Website</h1>
+              <h1 class="title is-1">Docment test fofofof</h1>
               <h2 class="subtitle colored is-4">Lorem ipsum dolor sit amet.</h2>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis ex deleniti aliquam tempora libero excepturi vero soluta odio optio sed.</p>
             </div>
