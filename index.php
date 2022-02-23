@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register - Free Bulma template</title>
+    <title>BDM & Co.</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
@@ -50,20 +50,8 @@
             <div class="level-left">
               <div class="level-item">
                 <span class="icon">
-                  <i class="fab fa-twitter"></i>
+                  <a href="https://github.com/Edoardo11/GoogleDocs-GoogleSheets" class="fab fa-github"></a>
                 </span> &emsp;
-                <span class="icon">
-                  <i class="fab fa-facebook"></i>
-                </span> &emsp;
-                <span class="icon">
-                  <i class="fab fa-instagram"></i>
-                </span> &emsp;
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span> &emsp;
-                <span class="icon">
-                  <i class="fas fa-envelope"></i>
-                </span>
               </div>
             </div>
             <div class="level-right">
