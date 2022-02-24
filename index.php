@@ -18,14 +18,12 @@
         <div class="column is-8 is-offset-2 register">
           <div class="columns">
             <div class="column left">
-              <h1 class="title is-1">Docment test fofofof</h1>
-              <h2 class="subtitle colored is-4">Lorem ipsum dolor sit amet.</h2>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis ex deleniti aliquam tempora libero excepturi vero soluta odio optio sed.</p>
+              <h1 class="title is-4">Upload your Google Docs</h1>
+              <button class="button is-block is-primary is-fullwidth is-medium" style="background-color: #2684fc">Upload</button>
             </div>
             <div class="column right has-text-centered">
-              <h1 class="title is-4">Sign up today</h1>
-              <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
-                <button class="button is-block is-primary is-fullwidth is-medium">Submit</button>
+              <h1 class="title is-4">Upload your Google Sheets</h1>
+                <button class="button is-block is-primary is-fullwidth is-medium" style="background-color: #21a464">Upload</button>
             </div>
           </div>
         </div>
@@ -43,7 +41,7 @@
             </div>
             <div class="level-right">
               <small class="level-item" style="color: var(--textLight)">
-                &copy; Super Cool Website. All Rights Reserved.
+                &copy; BDM & Co.
               </small>
             </div>
           </nav>
@@ -53,7 +51,7 @@
   </body>
   <style>
     :root {
-      --brandColor: hsl(166, 67%, 51%);
+      --brandColor: black; 
       --background: rgb(247, 247, 247);
       --textDark: hsla(0, 0%, 0%, 0.66);
       --textLight: hsla(0, 0%, 0%, 0.33);
@@ -70,12 +68,12 @@
       text-decoration: none;
     }
     a:hover {
-      color: #2ed6af;
+      color: black;
       background-color: transparent;
       text-decoration: underline;
     }
     a:active {
-      color: #2ed6af;
+      color: black;
       background-color: transparent;
       text-decoration: underline;
     }
@@ -84,6 +82,10 @@
       background: var(--background);
       height: 100vh;
       color: var(--textDark);
+    }
+
+    .button.is-primary.is-focused:not(:active), .button.is-primary:focus:not(:active) {
+        box-shadow: 0 0 0 0.125em rgb(0 0 0 / 20%);
     }
 
     .field:not(:last-child) {
