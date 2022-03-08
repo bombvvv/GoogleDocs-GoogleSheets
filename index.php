@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-    <link rel="stylesheet" type="text/css" href="../css/register.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
 
   <body>
@@ -50,112 +50,5 @@
       </div>
     </section>
   </body>
-  <style>
-    :root {
-      --brandColor: black; 
-      --background: rgb(247, 247, 247);
-      --textDark: hsla(0, 0%, 0%, 0.66);
-      --textLight: hsla(0, 0%, 0%, 0.33);
-    }
-
-    a:link {
-      color: black;
-      background-color: transparent;
-      text-decoration: none;
-    }
-    a:visited {
-      color: black;
-      background-color: transparent;
-      text-decoration: none;
-    }
-    a:hover {
-      color: black;
-      background-color: transparent;
-      text-decoration: underline;
-    }
-    a:active {
-      color: black;
-      background-color: transparent;
-      text-decoration: underline;
-    }
-
-    body {
-      background: var(--background);
-      height: 100vh;
-      color: var(--textDark);
-    }
-
-    .button.is-primary.is-focused:not(:active), .button.is-primary:focus:not(:active) {
-        box-shadow: 0 0 0 0.125em rgb(0 0 0 / 20%);
-    }
-
-    .field:not(:last-child) {
-      margin-bottom: 1rem;
-    }
-
-    .register {
-      margin-top: 10rem;
-      background: white;
-      border-radius: 10px;
-    }
-
-    .left,
-    .right {
-      padding: 4.5rem;
-    }
-
-    .left {
-      border-right: 5px solid var(--background);
-    }
-
-    .left .title {
-      font-weight: 800;
-      letter-spacing: -2px;
-    }
-
-    .left .colored {
-      color: var(--brandColor);
-      font-weight: 500;
-      margin-top: 1rem !important;
-      letter-spacing: -1px;
-    }
-
-    .left p {
-      color: var(--textLight);
-      font-size: 1.15rem;
-    }
-
-    .right .title {
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .right .description {
-      margin-top: 1rem;
-      margin-bottom: 1rem !important;
-      color: var(--textLight);
-      font-size: 1.15rem;
-    }
-
-    .right small {
-      color: var(--textLight);
-    }
-
-    input {
-      font-size: 1rem;
-    }
-
-    input:focus {
-      border-color: var(--brandColor) !important;
-      box-shadow: 0 0 0 1px var(--brandColor) !important;
-    }
-
-    .fab,
-    .fas {
-      color: var(--textLight);
-      margin-right: 1rem;
-    }
-
-  </style>
 
 </html>
