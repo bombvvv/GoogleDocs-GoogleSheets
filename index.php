@@ -24,9 +24,9 @@
             </div>
             <div class="column right has-text-centered">
               <h1 class="title is-4">Upload your Google Sheets</h1>
-              <a href="./sheets.php">
+              <form action="./google/sheets.php" method="post">
                 <button class="button is-block is-primary is-fullwidth is-medium" style="background-color: #21a464">Upload</button>
-              </a>
+              </form>
             </div>
           </div>
         </div>

@@ -1,45 +1,61 @@
 <?php
-/*
- *
- * https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get
- *
- * BEFORE RUNNING:
- * --------------
- * 1. If not already done, enable the Google Sheets API
- *    and check the quota for your project at
- *    https://console.developers.google.com/apis/api/sheets
- * 2. Install the PHP client library with Composer. Check installation
- *    instructions at https://github.com/google/google-api-php-client.
- */
+session_start();
 
-// Autoload Composer.
-require_once __DIR__ . '/vendor/autoload.php';
+require '../vendor/autoload.php';
 
-$client = getClient();
+$secrets = json_decode(file_get_contents("secrets.json"), true);
 
-$service = new Google_Service_Sheets($client);
+  // init configuration
+  $clientID = $secrets["googleapi"]["clientID"];
+  $clientSecret = $secrets["googleapi"]["clientSecret"];
+  $redirectUri = 'http://localhost/google/oauth';
 
-// The ID of the spreadsheet to retrieve data from.
-$spreadsheetId = 'my-spreadsheet-id';  // TODO: Update placeholder value.
+// create Client Request to access Google API
+$client = new Google_Client();
+$client->setClientId($clientID);
+$client->setClientSecret($clientSecret);
+$client->setRedirectUri($redirectUri);
+$client->addScope("email");
+$client->addScope("profile");
+  
 
-// The A1 notation of the values to retrieve.
-$range = 'my-range';  // TODO: Update placeholder value.
-
-$response = $service->spreadsheets_values->get($spreadsheetId, $range);
-
-// TODO: Change code below to process the `response` object:
-echo '<pre>', var_export($response, true), '</pre>', "\n";
-
-function getClient() {
-  // TODO: Change placeholder below to generate authentication credentials. See
-  // https://developers.google.com/sheets/quickstart/php#step_3_set_up_the_sample
-  //
-  // Authorize using one of the following scopes:
-  //   'https://www.googleapis.com/auth/drive'
-  //   'https://www.googleapis.com/auth/drive.file'
-  //   'https://www.googleapis.com/auth/drive.readonly'
-  //   'https://www.googleapis.com/auth/spreadsheets'
-  //   'https://www.googleapis.com/auth/spreadsheets.readonly'
-  return null;
+if(isset($_SESSION['Gauth'])){
+	$tempglogin_email=$_SESSION['Gauth']['email'];
+    require('rest/tempglogin.php');
+    if($tempglogin_check){
+    	$_SESSION["username"]=$tempglogin_username;
+    	$_SESSION["logged"]=true;
+		header("location: https://francescodandreastudente.altervista.org/showPilot/account");
+    } else {
+		header("location: https://francescodandreastudente.altervista.org/showPilot/account?le=Gauth error. Please log in using your email and password.");
+    }
+} else {
+// authenticate code from Google OAuth Flow
+if(isset($_REQUEST['code'])) {
+  $token = $client->fetchAccessTokenWithAuthCode($_REQUEST['code']);
+  $client->setAccessToken($token['access_token']);
+   
+  // get profile info
+  $google_oauth = new Google_Service_Oauth2($client);
+  $google_account_info = $google_oauth->userinfo->get();
+  $_SESSION['Gauth']['email'] = $google_account_info->email;
+  $_SESSION['Gauth']['familyName'] = $google_account_info->familyName;
+  $_SESSION['Gauth']['givenName'] = $google_account_info->givenName;
+  $_SESSION['Gauth']['id'] = $google_account_info->id;
+  $_SESSION['Gauth']['picture'] = $google_account_info->picture;
+  
+  $tempglogin_email=$_SESSION['Gauth']['email'];
+  require('rest/tempglogin.php');
+  if($tempglogin_check){
+    $_SESSION["username"]=$tempglogin_username;
+    $_SESSION["logged"]=true;
+	header("location: https://francescodandreastudente.altervista.org/showPilot/account");
+  } else {
+    require('webchunks/setuppass.php');
+  }
+  // now you can use this profile info to create account in your website and make user logged in.
+} else {
+  $authurl=$client->createAuthUrl();
+}
 }
 ?>
