@@ -9,15 +9,15 @@ $('SheetsBttn').observe('click', function () {
 });
 
 if (Docsclicked) {
-    
+    changeDcsStyle();
     } else {
     // Button not clicked
     }
 
 if (Sheetsclicked) {
-    
+    changeShtsStyle();
     } else {
-    // Button not clicked
+    
     }
   
 function changeDcsStyle(){
